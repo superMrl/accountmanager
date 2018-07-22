@@ -42,6 +42,7 @@ public class LoginController {
         if(!CommonUtils.isNull(login)){
             result = "success";
         }
+
         JSONObject json = new JSONObject();
         json.put("msg",result);
         return json.toString();
