@@ -1,0 +1,66 @@
+spring:
+  profiles.active: local
+---
+
+
+spring:
+  profiles: local
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+  datasource:
+    url: jdbc:mysql://39.106.132.4:3306/account?allowMultiQueries=true&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    initial-size: 3
+    max-active: 20
+    min-idle: 2
+    validation-query: SELECT 1
+#配置页面
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: LEGACYHTML5
+    cache: false
+
+  #redis:
+      #host: 172.16.32.19
+      #pool:
+          #max-active: 200
+          #max-idle: 100
+          #max-wait: 10000
+          #min-idle: 5
+  #rabbitmq:
+      #username: guest
+      #password: guest
+      #host: 172.16.0.29
+      #port: 5672
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+
+#grpc:
+#  port: 6657
+#  client:
+#    hosts:
+#      hrbase: localhost:6657
+#      org: dohko.org.service.hualala.com:31531
+#      attendance: dohko.hr.attendance.hualala.com:31685
+#      message: dohko.service.short.message.hualala.com:31524
+#      equity: equity.core.service.hualala.com:31731
+#      msg: dohko.msg.service.hualala.com:31711
+#
+#gray:
+#  zkUrl: 172.16.0.50:2281
+#  scNotifyUrl:  http://172.16.0.50:10911
+#  enable: false
+#
+#endpoints:
+#  enabled: false
+#  health:
+#     enabled: true
+#     time-to-live: 5000
+
+---
