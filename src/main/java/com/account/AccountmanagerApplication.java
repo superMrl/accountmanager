@@ -3,8 +3,10 @@ package com.account;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.Ordered;
@@ -18,7 +20,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @ComponentScan
 @EnableCaching
 @EnableAsync
-public class AccountmanagerApplication implements CommandLineRunner ,EmbeddedServletContainerCustomizer {
+public class AccountmanagerApplication extends SpringBootServletInitializer implements CommandLineRunner ,EmbeddedServletContainerCustomizer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AccountmanagerApplication.class, args);
@@ -28,10 +30,15 @@ public class AccountmanagerApplication implements CommandLineRunner ,EmbeddedSer
 	public void run(String... args) throws Exception {
 
 	}
-
 	@Override
 	public void customize(ConfigurableEmbeddedServletContainer configurableEmbeddedServletContainer) {
-		//设置端口号,阿里云服务器上面用的是9091
-		configurableEmbeddedServletContainer.setPort(9091);
+		//设置端口号,阿里云服务器上面用的是8080
+		configurableEmbeddedServletContainer.setPort(8080);
+	}
+
+	//用于外部tomcat启动
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(AccountmanagerApplication.class);
 	}
 }

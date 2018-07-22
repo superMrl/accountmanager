@@ -63,4 +63,7 @@ mybatis:
 #     enabled: true
 #     time-to-live: 5000
 
+
+server:
+  context-path: /account
 ---

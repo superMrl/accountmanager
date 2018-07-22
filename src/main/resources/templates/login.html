@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <meta name="keywords" content="accountmanager"/>
     <meta name="description" content="accountmanager v0.1"/>
-    <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="../static/layui/css/layui.css"/>
-    <link rel="stylesheet" href="../static/css/login/animate.min.css"/>
-    <link rel="stylesheet" href="../static/css/login/login.css"/>
+    <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="static/layui/css/layui.css"/>
+    <link rel="stylesheet" href="static/css/login/animate.min.css"/>
+    <link rel="stylesheet" href="static/css/login/login.css"/>
 </head>
 <body>
 <div class="login-box animated rotateIn">
@@ -38,8 +38,9 @@
     </div>
 </div>
 <!--js逻辑-->
-<script src="../static/layui/layui.js"></script>
-<script src="../static/js/jquery3.3.1.js"></script>
+<script src="static/js/common.js"></script>
+<script src="static/layui/layui.js"></script>
+<script src="static/js/jquery3.3.1.js"></script>
 <script>
     layui.use(['form'], function () {
         var form = layui.form;
@@ -47,7 +48,7 @@
         form.on('submit(login)', function (data) {
             var index = layer.load(1);
             $.ajax({
-                url: "/login"
+                url: base_url+"/login"
                 ,data: data.field
                 ,type: 'post'
                 ,dataType: 'json'
