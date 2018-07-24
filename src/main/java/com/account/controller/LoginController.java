@@ -34,7 +34,7 @@ public class LoginController {
      */
     @ResponseBody
     @RequestMapping("/login")
-    public String login(@PathParam("name") String name,@PathParam("password") String password){
+    public String login(@PathParam("name") String name, @PathParam("password") String password){
 
         String result = "error";
 
