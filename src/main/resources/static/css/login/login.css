@@ -1,6 +1,11 @@
 body {
     background: url("../../images/bg.png") no-repeat center center fixed ;
     background-size: cover;
+    /*background-position:bottom;*/
+    /*background-size:cover;*/
+    /*padding-top:0;*/
+    /*background-position:bottom;*/
+    /*background-size:auto 111%;*/
 }
 
 .login-box {
