@@ -32,8 +32,8 @@ public class AccountmanagerApplication extends SpringBootServletInitializer impl
 	}
 	@Override
 	public void customize(ConfigurableEmbeddedServletContainer configurableEmbeddedServletContainer) {
-		//设置端口号,阿里云服务器上面用的是8080
-		configurableEmbeddedServletContainer.setPort(8080);
+		//设置端口号,jenkins使用的是8080
+		configurableEmbeddedServletContainer.setPort(8081);
 	}
 
 	//用于外部tomcat启动
