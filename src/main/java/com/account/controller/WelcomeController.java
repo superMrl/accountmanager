@@ -13,6 +13,11 @@ public class WelcomeController {
 
     @RequestMapping("/")
     public String login(){
-        return "login";
+        return "welcome/login";
+    }
+
+    @RequestMapping("/welcome")
+    public String welcome(){
+        return "welcome/index";
     }
 }
